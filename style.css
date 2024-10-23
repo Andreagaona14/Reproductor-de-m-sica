@@ -10,10 +10,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(img/imgP.jpg);
+    background: url(img/imgP.jpg)
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('img/aa') no-repeat center center;
     background-size: cover;
-    filter: blur(8px);
-    z-index: -1;
+    filter: blur(8px); /* Aplica el desenfoque */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
 }
 
 /*Contendor principal*/
@@ -74,5 +84,5 @@ body {
 }
 
 .player_controls > i:hover {
-    color: #17e417;
+    color: #17e;
 }
