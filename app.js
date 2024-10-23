@@ -4,6 +4,8 @@ const pause = document.getElementById('pause');
 const forward = document.getElementById('forward');
 const rewind = document.getElementById('rewind');
 const stop = document.getElementById('stop');
+const next = document.getElementById('next');
+const former = document.getElementById('former');
 
 play.addEventListener('click', () => {
     if (audio.paused) {
