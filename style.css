@@ -33,7 +33,7 @@ body::before {
     height: 25rem;
     border-radius: 10px;
     background-color: #7a839a;
-    box-shadow: 4px 4px 5px #012b61;
+    box-shadow: 4px 4px 5px #001127;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,10 +1,19 @@
 export const playList = [
     {
+        title: 'Quizás',
+        artist: 'Afaz Natural',
+        img: 'img/imgP.jpg',
+        song: 'music/Afaz Natural - Quizás LETRA  (Video Lyric) - Afaz Natural (youtube).mp3',
+    },
+
+
+    {
         title: 'AL2 "El Aldeano"',
         artist: 'Artista 1',
         img: 'img/img1.jpg',
         song: 'music/Al2 El Aldeano - A Veces (LETRA) - AL2 El Aldeano (youtube).mp3',
     },
+
 
     {
         title: 'AL2 "El Aldeano"',
