@@ -21,7 +21,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('img/imgP.jpg') no-repeat center center;
+    background: url('img/imgF.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(8px); /* Aplica el desenfoque */
     z-index: -1; /* Coloca el fondo detrás del contenido */
@@ -32,8 +32,8 @@ body::before {
     width: 18rem;
     height: 30rem;
     border-radius: 10px;
-    background-color: #7a839a;
-    box-shadow: 4px 4px 5px #001127;
+    background-color: #648dfc;
+    box-shadow: 4px 4px 5px #6e39ff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,9 +41,10 @@ body::before {
 }
 
 /*Contenedores hijos del contendor principal*/
-.container-player > h1 {
+.container-player > h1  {
     font-size: 2rem;
-    color: #b9cfe9;
+    color: #020363d8;
+    text-shadow: 2px 2px 5px rgb(200, 188, 253);
 }
 
 .container-album {
@@ -84,6 +85,10 @@ body::before {
     cursor: pointer;
 }
 
+.player__artist{
+    color: white;
+}
+
 .player_controls > i:hover {
-    color: #17e;
+    color: rgb(200, 188, 253);
 }
