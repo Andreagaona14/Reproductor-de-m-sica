@@ -8,8 +8,8 @@ export const playList = [
 
 
     {
-        title: 'AL2 "El Aldeano"',
-        artist: 'Artista 1',
+        title: 'A veces',
+        artist: 'AL2 "El Aldeano',
         img: 'img/img1.jpg',
         song: 'music/Al2 El Aldeano - A Veces (LETRA) - AL2 El Aldeano (youtube).mp3',
     },

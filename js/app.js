@@ -1,27 +1,28 @@
-import { playList } from '../playlist.js';
+// Importar la lista de reproducción
+import { playList } from './playlist.js'; // Asegúrate de que la ruta sea correcta
 
 const audio = document.getElementById('audio');
 const play = document.getElementById('play');
 const forward = document.getElementById('forward');
 const rewind = document.getElementById('rewind');
-const former = document.getElementById('former');
 const next = document.getElementById('next');
+const former = document.getElementById('former');
+const img = document.querySelector('.player__img');
+const artist = document.querySelector('.player__artist');
+const songTitle = document.querySelector('.player__song');
 
-let currentSongIndex = 0; 
+let currentSongIndex = 0; // Índice de la canción actual
 
+// Función para cargar una canción
 function loadSong(index) {
-    const currentSong = playList[index];
-    audio.src = currentSong.song;
-    document.querySelector('.playerimg').src = currentSong.img;
-    document.querySelector('.playerartist').textContent = currentSong.artist;
-    document.querySelector('.player__song').textContent = currentSong.title;
-    audio.play();
-    play.classList.remove('bx-play');
-    play.classList.add('bx-pause');
+    audio.src = playList[index].song; // Cargar la ruta de la canción
+    artist.textContent = playList[index].artist; // Actualizar el artista
+    songTitle.textContent = playList[index].title; // Actualizar el título de la canción
+    img.src = playList[index].img; // Actualizar la imagen del álbum
+    audio.load(); // Cargar la nueva canción en el reproductor
 }
 
-loadSong(currentSongIndex);
-
+// Reproducir o pausar la canción
 play.addEventListener('click', () => {
     if (audio.paused) {
         audio.play();
@@ -34,21 +35,29 @@ play.addEventListener('click', () => {
     }
 });
 
+// Retroceder 10 segundos
 rewind.addEventListener('click', () => audio.currentTime -= 10);
 
+// Adelantar 10 segundos
 forward.addEventListener('click', () => audio.currentTime += 10);
 
-former.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex > 0) ? currentSongIndex - 1 : playList.length - 1; 
-    loadSong(currentSongIndex);
-});
-
+// Pasar a la siguiente canción
 next.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex < playList.length - 1) ? currentSongIndex + 1 : 0; 
-    loadSong(currentSongIndex);
+    currentSongIndex = (currentSongIndex + 1) % playList.length; // Incrementar el índice
+    loadSong(currentSongIndex); // Cargar la siguiente canción
+    audio.play(); // Reproducir la nueva canción
+    play.classList.remove('bx-play');
+    play.classList.add('bx-pause');
 });
 
-audio.addEventListener('ended', () => {
-    currentSongIndex = (currentSongIndex < playList.length - 1) ? currentSongIndex + 1 : 0; 
-    loadSong(currentSongIndex);
+// Volver a la canción anterior
+former.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex - 1 + playList.length) % playList.length; // Decrementar el índice
+    loadSong(currentSongIndex); // Cargar la canción anterior
+    audio.play(); // Reproducir la nueva canción
+    play.classList.remove('bx-play');
+    play.classList.add('bx-pause');
 });
+
+// Cargar la primera canción al inicio
+loadSong(currentSongIndex);
