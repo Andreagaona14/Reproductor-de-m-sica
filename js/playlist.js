@@ -31,7 +31,7 @@ export const playList = [
 
     {
         title:'AL2 "El Aldeano"',
-        artist: 'Necesito Decirte una Cosa',
+        artist: 'Necesito decirte una cosa',
         img:  'img/img4.jpg',
         song:'music/Necesito Decirte una Cosa - AL2 El Aldeano (youtube).mp3',
   },

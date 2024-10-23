@@ -30,7 +30,7 @@ body::before {
 /*Contendor principal*/
 .container-player {
     width: 18rem;
-    height: 25rem;
+    height: 30rem;
     border-radius: 10px;
     background-color: #7a839a;
     box-shadow: 4px 4px 5px #001127;
