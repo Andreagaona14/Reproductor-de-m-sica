@@ -10,7 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(img/imgP.jpg)
+    position: relative;
+    overflow: hidden;
 }
 
 body::before {
@@ -20,7 +21,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('img/aa') no-repeat center center;
+    background: url('img/imgP.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(8px); /* Aplica el desenfoque */
     z-index: -1; /* Coloca el fondo detrás del contenido */
